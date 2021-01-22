@@ -1,16 +1,27 @@
 #include <stdio.h>
+#include <iostream>
 #include "Bus.h"
+#include <string>
 
 /*
-	char * code;
+	string code;
 	int seat;
-	char * origin;
-	char * destination;
-	char * hr_in;
-	char * hr_out;
+	string origin;
+	string destination;
+	string hr_in;
+	string hr_out;
 	float price;
  */
-void Bus::Bus(char * Code, int Seat, char * Origin, char* Destination, char* Hr_in, char * Hr_out, float Price){
+Bus::Bus(){
+	setCode("Null");
+	setSeat(0);
+	setOrigin("Null");
+	setDestination("Null");
+	setHr_in("Null");
+	setHr_out("Null");
+	setPrice(0.0);
+}
+Bus::Bus(std::string Code, int Seat, std::string Origin, std::string Destination, std::string Hr_in, std::string Hr_out, float Price){
 	setCode(Code);
 	setSeat(Seat);
 	setOrigin(Origin);
@@ -19,7 +30,19 @@ void Bus::Bus(char * Code, int Seat, char * Origin, char* Destination, char* Hr_
 	setHr_out(Hr_out);
 	setPrice(Price);
 }
+/*Bus::Bus(const Bus &b){
+	setCode(b.getCode());
+	setSeat(b.getSeat());
+	setOrigin(b.getOrigin());
+	setDestination(b.getDestination());
+	setHr_in(b.getHr_in());
+	setHr_out(b.getHr_out());
+	setPrice(b.getPrice());
+}
+*/
+/*
 ~Bus(){
+	
 	delete code;
 	delete seat;
 	delete origin;
@@ -27,29 +50,32 @@ void Bus::Bus(char * Code, int Seat, char * Origin, char* Destination, char* Hr_
 	delete hr_in;
 	delete hr_out;
 	delete price;
-}
+	
+}*/
 void Bus::printAll(){
-	printf("Codigo\tAsientos\tOrigen\tDestino\tHora llegada\t Hora Salida\tPrecio \n");
-	printf("%s \t%d \t%s \t%s \t%s \t%s  \t%.2f \n", code, seat,  origin, destination, hr_in, hr_out, price);
+	//printf("Codigo\tAsientos\tOrigen\tDestino\tHora llegada\t Hora Salida\tPrecio \n");
+	std::cout<<code<<"\t"<<seat<<"\t"<<origin<<"\t"<<destination<<"\t"<<hr_in<<"\t"<<hr_out<<"\t"<< price;
+	//printf("  %s \t%d \t%s \t%s \t%s \t%s  \t%.2f \n", code, seat,  origin, destination, hr_in, hr_out, price);
+	printf("\n");
 }
 
 //Setter
-void Bus::setCode(char * Code){
+void Bus::setCode(std::string Code){
 	code = Code;
 }
 void Bus::setSeat(int Seat){
 	seat = Seat;
 }
-void Bus::setOrigin(char *Origin){
+void Bus::setOrigin(std::string Origin){
 	origin = Origin;
 }
-void Bus::setDestination(char * Destination){
+void Bus::setDestination(std::string Destination){
 	destination = Destination;
 }
-void Bus::setHr_in(char * Hr_in){
+void Bus::setHr_in(std::string Hr_in){
 	hr_in = Hr_in;
 }	
-void Bus::setHr_out(char * Hr_out){
+void Bus::setHr_out(std::string Hr_out){
 	hr_out = Hr_out;
 }
 void Bus::setPrice(float Price){
@@ -57,22 +83,22 @@ void Bus::setPrice(float Price){
 }
 
 //Getter
-char * Bus::getCode(){
+std::string Bus::getCode(){
 	return code;
 }
 int Bus::getSeat(){
 	return seat;
 }
-char * Bus::getOrigin(){
+std::string Bus::getOrigin(){
 	return origin;
 }
-char * Bus::getDestination(){
+std::string Bus::getDestination(){
 	return destination;
 }
-char * Bus::getHr_in(){
+std::string Bus::getHr_in(){
 	return hr_in;
 }
-char * Bus::getHr_out(){
+std::string Bus::getHr_out(){
 	return hr_out;
 }
 float Bus::getPrice(){
