@@ -8,9 +8,9 @@ class System{
 		//~System();
 		void menu();
 		void insertBus(std::string code, int seat,std::string origin, std::string destination, std::string hr_in, std::string hr_out, float price);
-		void deleteBus(int id);
-		void updateBus(std::string code);
-		void searchBus(std::string origin);
+		bool deleteBus(int id);
+		bool updateBus(std::string code);
+		bool searchBus(std::string origin);
 		void bookingSeat(std::string code, std::string name, std::string cc);
 		void details();
 		void cancelSeat();

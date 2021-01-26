@@ -1,6 +1,5 @@
 
-void create() 
-{ 
+void Archivo::create() { 
 	// file pointer 
 	fstream fout; 
 
@@ -35,8 +34,7 @@ void create()
 	} 
 } 
 
-void read_record() 
-{ 
+void Archivo::read_record() { 
 
 	// File pointer 
 	fstream fin; 
@@ -97,8 +95,7 @@ void read_record()
 		cout << "Record not found\n"; 
 } 
 
-void update_recode() 
-{ 
+void Archivo::update_recode() { 
 
 	// File pointer 
 	fstream fin, fout; 
@@ -211,8 +208,7 @@ void update_recode()
 	rename("reportcardnew.csv", "reportcard.csv"); 
 } 
 
-void delete_record() 
-{ 
+void Archivo::delete_record() { 
 
 	// Open FIle pointers 
 	fstream fin, fout; 

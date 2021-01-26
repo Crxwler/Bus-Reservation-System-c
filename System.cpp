@@ -46,27 +46,20 @@ void System::insertBus(std::string code, int seat,std::string origin, std::strin
 void System::deleteBus(int id){
 	b.erase(b.begin()+id);
 }
-void System::updateBus(std::string code){
+bool System::updateBus(std::string code){
 	flag=0;
-	str="";
-	do{	
-		printf("Which schedule want to update?\n");
-		printf("Enter code\n");
-		fflush(stdin);
-		getline(std::cin,str);
-		for (int i = 0; i < b.size(); ++i){
-			if(flag) break;
-			if(b[i].getCode() == str){
-				flag=1;
-				b[i].setCode(str);
-			}
+	for (int i = 0; i < b.size(); ++i){
+		if(flag) break;
+		if(b[i].getCode() == code){
+			flag=1;
+			b[i].setCode(code);
+			return true;
 		}
-		if(!flag)
-			printf("Enter a valid code!\n");
-
-	} while (flag==0);
+	}
+	return false;
 }
-void System::searchBus(std::string origin){
+
+bool System::searchBus(std::string origin){
 	flag=1;
 	str="";
 	do {

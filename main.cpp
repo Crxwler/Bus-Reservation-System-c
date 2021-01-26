@@ -50,6 +50,7 @@ int main(int argc, char const *argv[]){
 				printf("Enter price of ticket: \n");
 				scanf(" %f",&price);
 				run.insertBus(code, origin, destination, hr_in, hr_out, price);
+
 				break;
 			case 2: //Boolean ?
 				printBus();
@@ -57,34 +58,44 @@ int main(int argc, char const *argv[]){
 				scanf("%d",&id);
 				run.deleteBus(id);
 				break;
-			case 3:
+			case 3://Boolean ?
 				run.printBus();
 				flag=0;
 				str="";
-				do{	
-					printf("Which schedule want to update?\n");
-					printf("Enter code\n");
-					fflush(stdin);
-					getline(std::cin,str);
-					for (int i = 0; i < b.size(); ++i){
-						if(flag) break;
-						if(b[i].getCode() == str){
-							flag=1;
-							b[i].setCode(str);
-						}
-					}
-					if(!flag)
-						printf("Enter a valid code!\n");
+				printf("Which schedule want to update?\n");
+				printf("Enter code\n");
+				fflush(stdin);
+				getline(std::cin,str);
+				if(!run.updateBus(str))
+					printf("Enter a valid code!\n Try Again!\n");
+				else
+					printf("Update successful\n");
 
-				} while (flag==0);
-				updateBus();
 				break;
 			case 4:
-				searchBus();
+				flag=1;
+				str="";
+				do {
+					printf("Enter your origin\n");
+					fflush(stdin);
+					getline(std::cin,str);
+					if(!run.searchBus(str)) {
+						/* code */
+						printf("try again?\n");
+						printf("1. Yes\n");
+						printf("0. No\n");
+						scanf("%d",&flag);
+					}
+				} while ( flag );
+				
 				break;
 			case 5:
 				printBus();
-				bookingDetails();
+				printf("Enter code of schedule\n");
+				fflush(stdin);
+				getline(std::cin,str);
+				
+				bookingSeat(std::string code, std::string name, std::string cc);
 				break;
 			case 6:
 				printCustomer();
