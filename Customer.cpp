@@ -27,7 +27,7 @@ Customer::Customer(std::string Name, std::string Code, std::string CC){
 	setCC(CC);	
 }
 
-void Customer::showAll(){
+void Customer::printAll(){
 	//printf("Name\tCode\tCredit Card\n");
 	std::cout<<name<<"\t"<<code<<"\t"<<cc;
 }

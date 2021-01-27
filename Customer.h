@@ -5,7 +5,7 @@ class Customer{
 		Customer();
 		Customer(std::string Name, std::string Code);
 		Customer(std::string Name, std::string Code, std::string CC);
-		void showAll();
+		void printAll();
 		//~Customer();
 		void setName(std::string Name);
 		void setCode(std::string Code);

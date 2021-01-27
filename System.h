@@ -1,5 +1,6 @@
 #include "Bus.h"
 #include "Customer.h"
+#include <vector>
 
 
 class System{
@@ -7,12 +8,12 @@ class System{
 		System();
 		//~System();
 		void menu();
-		void insertBus(std::string code, int seat,std::string origin, std::string destination, std::string hr_in, std::string hr_out, float price);
-		bool deleteBus(int id);
-		bool updateBus(std::string code);
-		bool searchBus(std::string origin);
-		void bookingSeat(std::string code, std::string name, std::string cc);
-		void details();
+		void insertBus();
+		void deleteBus();
+		void updateBus();
+		void searchBus();
+		void bookingSeat();
+		void bookingDetails();
 		void cancelSeat();
 		void printCustomer();
 		void printBus();
@@ -20,6 +21,15 @@ class System{
 	private:
 		std::vector<Bus> b;
 		std::vector<Customer> c;
+		int seat;
+		float price;
+		std::string code, origin, destination, hr_in,hr_out;
+		std::string Name,CC;
+		int flag;
+		int id;
+		std::string str;
+		Bus temp;
+		Customer temp2;
 
 };
 
