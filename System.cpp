@@ -4,6 +4,7 @@
 #include <iostream>
 #include "System.h"
 
+
 /*
 	string code;
 	int seat;
@@ -16,8 +17,8 @@
 	std::vector<Customer> c;
  */
 System::System(){
-	//Check file
-	//
+	File file;
+	
 }
 
 void System::menu(){

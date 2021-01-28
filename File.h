@@ -1,11 +1,15 @@
+#include "Bus.h"
+#include "Customer.h"
+#include <vector>
+
+
 class File{
 	public:
 		File();
+		File(std::vector<Bus> *b, std::vector<Customer> *c);
 		//~File();
-		void create();
-		void read_record();
-		void update_record();
-		void delete_record();
+		void create(std::vector<Bus> *b, std::vector<Customer> *c);
+		void save(std::vector<Bus> *b, std::vector<Customer> *c);
 	private:
 
 };
