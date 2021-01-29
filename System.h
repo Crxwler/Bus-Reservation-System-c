@@ -1,7 +1,20 @@
+#ifndef Bus_H
+#define Bus_H
 #include "Bus.h"
+#endif // Bus_H
+
+#ifndef Customer_H
+#define Customer_H
 #include "Customer.h"
+#endif // Customer_H
+
+
+#ifndef File_h
+#define File_h
+#include "File.h"
+#endif // File_h
+
 #include <vector>
-#include <File.h>
 
 class System{
 	public:
@@ -30,17 +43,6 @@ class System{
 		std::string str;
 		Bus temp;
 		Customer temp2;
+		File save;
 
 };
-
-
-
-/*
-	string code;
-	int seat;
-	string origin;
-	string destination;
-	string hr_in;
-	string hr_out;
-	float price;
- */

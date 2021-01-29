@@ -5,6 +5,7 @@
 #include "System.h"
 
 
+
 /*
 	string code;
 	int seat;
@@ -17,8 +18,11 @@
 	std::vector<Customer> c;
  */
 System::System(){
-	File file;
-	
+	//File file;
+	//File fileget(b,c);
+	//file.create(b,c);
+	save.getText(b, c);
+	printf("Se hizo un constructor System\n");
 }
 
 void System::menu(){
@@ -53,7 +57,6 @@ void System::menu(){
 			case 5:
 				printBus();
 				bookingSeat();
-
 				break;
 			case 6:
 				bookingDetails();
@@ -67,6 +70,7 @@ void System::menu(){
 
 		}
 	} while (op != 0 );
+	save.save(b,c);
 }
 
 void System::insertBus(){
