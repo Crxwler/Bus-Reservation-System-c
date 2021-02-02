@@ -15,3 +15,9 @@ This project has been developed using C++ programming language using OOP. Overal
 6. Customer details search
 
 7. Customer seat cancel
+
+
+For running use:
+
+g++ main.cpp System.cpp Bus.cpp Customer.cpp File.cpp -o app
+app
