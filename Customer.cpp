@@ -30,6 +30,7 @@ Customer::Customer(std::string Name, std::string Code, std::string CC){
 void Customer::printAll(){
 	//printf("Name\tCode\tCredit Card\n");
 	std::cout<<name<<"\t"<<code<<"\t"<<cc;
+	printf("\n");
 }
 
 void Customer::setName(std::string Name){

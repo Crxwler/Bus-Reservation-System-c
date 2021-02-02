@@ -22,12 +22,14 @@ System::System(){
 	//File fileget(b,c);
 	//file.create(b,c);
 	save.getText(b, c);
-	printf("Se hizo un constructor System\n");
+	//printf("Se hizo un constructor System\n");
 }
 
 void System::menu(){
 	int op=-1;
 	do {
+		printf("Welcome to Bus ticket System\n");
+		printf("\tMenu\n");
 		printf("1. Insert bus schedule\n");
 		printf("2. Delete bus schedule\n");
 		printf("3. Update bus schedule\n");
@@ -192,7 +194,7 @@ void System::bookingSeat(){
 void System::bookingDetails(){
 	printf("List of Customers\n");
 	printf("ID Name\tCode\tCredit Card\n");
-	for (int i = 0; i < b.size(); ++i){
+	for (int i = 0; i < c.size(); ++i){
 		printf("%d. ", i+1);
 		c[i].printAll();
 	}
@@ -207,7 +209,7 @@ void System::cancelSeat(){
 void System::printCustomer(){
 	printf("List of Customers\n");
 	printf("ID Name\tCode Bus\tCredit Card\n");
-	for (int i = 0; i < b.size(); ++i){
+	for (int i = 0; i < c.size(); ++i){
 		printf("%d. ", i+1);
 		c[i].printAll();
 	}
