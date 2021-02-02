@@ -54,7 +54,7 @@ void File::getText(std::vector<Bus> &b, std::vector<Customer> &c) {
 	}
 	//delete *Temp;
 	fin.close();
-	fin = NULL;
+	//fin = NULL;
 	fin.open("Customer.csv", std::ios::in);
 	//std::cout << "Customer size "<< c.size()<< "n";
 	//printf("\n"); 
@@ -100,7 +100,7 @@ void File::create(std::vector<Bus> b, std::vector<Customer> c){
 				<< "\n"; 
 		} 
 		fout.close();
-		fout = NULL;
+		//fout = NULL;
 
 		fout.open("Customer.csv", std::ios::out | std::ios::app); 
 		for (int i = 0; i < c.size(); i++) { 
@@ -137,8 +137,8 @@ void File::save(std::vector<Bus> b, std::vector<Customer> c) {
 	fout.close(); 
 	remove("Bus.csv"); 
 	rename("BusTemp.csv", "Bus.csv");
-	fin = NULL;
-	fout = NULL;
+	//fin = NULL;
+	//fout = NULL;
 	
 	fin.open("Customer.csv", std::ios::in);
 	fout.open("CustomerTemp.csv", std::ios::out);
