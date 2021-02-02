@@ -19,5 +19,5 @@ This project has been developed using C++ programming language using OOP. Overal
 
 For running use:
 
-g++ main.cpp System.cpp Bus.cpp Customer.cpp File.cpp -o app
-app
+g++ main.cpp System.cpp Bus.cpp Customer.cpp File.cpp -o app  
+app  
