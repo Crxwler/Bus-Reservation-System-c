@@ -2,15 +2,6 @@
 #include <string>
 #include "Customer.h"
 #include <iostream>
-
-/*
-	string name;
-	string cc;
-	string code:
-
- */
-
-
 Customer::Customer(){
 	setName("Null");
 	setCode("Null");

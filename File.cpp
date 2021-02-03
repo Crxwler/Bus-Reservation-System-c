@@ -5,20 +5,15 @@
 #include <iostream>
 
 File::File(){
-	//printf("Verifico Archivo\n");
 	std::fstream fin;
 	fin.open("Bus.csv", std::ios::in);
 	if(fin.is_open()) {
 		flag = true;
-		//printf("Verdaddero\n");
 	}else{
-		//printf("File not found, No schedule\n");
 		flag = false;
-		//printf("Falso\n");
 	}
 	fin.close();
 }
-//getData from csv to vector 
 void File::getText(std::vector<Bus> &b, std::vector<Customer> &c) { 
 	std::fstream fin; 
 	fin.open("Bus.csv", std::ios::in);  

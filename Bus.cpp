@@ -3,15 +3,6 @@
 #include "Bus.h"
 #include <string>
 
-/*
-	string code;
-	int seat;
-	string origin;
-	string destination;
-	string hr_in;
-	string hr_out;
-	float price;
- */
 Bus::Bus(){
 	setCode("Null");
 	setSeat(0);
@@ -30,32 +21,8 @@ Bus::Bus(std::string Code, int Seat, std::string Origin, std::string Destination
 	setHr_out(Hr_out);
 	setPrice(Price);
 }
-/*Bus::Bus(const Bus &b){
-	setCode(b.getCode());
-	setSeat(b.getSeat());
-	setOrigin(b.getOrigin());
-	setDestination(b.getDestination());
-	setHr_in(b.getHr_in());
-	setHr_out(b.getHr_out());
-	setPrice(b.getPrice());
-}
-*/
-/*
-~Bus(){
-	
-	delete code;
-	delete seat;
-	delete origin;
-	delete destination;
-	delete hr_in;
-	delete hr_out;
-	delete price;
-	
-}*/
 void Bus::printAll(){
-	//printf("Codigo\tAsientos\tOrigen\tDestino\tHora llegada\t Hora Salida\tPrecio \n");
 	std::cout<<code<<"\t"<<seat<<"\t"<<origin<<"\t"<<destination<<"\t"<<hr_in<<"\t"<<hr_out<<"\t"<< price;
-	//printf("  %s \t%d \t%s \t%s \t%s \t%s  \t%.2f \n", code, seat,  origin, destination, hr_in, hr_out, price);
 	printf("\n");
 }
 
