@@ -4,25 +4,8 @@
 #include <iostream>
 #include "System.h"
 
-
-
-/*
-	string code;
-	int seat;
-	string origin;
-	string destination;
-	string hr_in;
-	string hr_out;
-	float price;
-	std::vector<Bus> b;
-	std::vector<Customer> c;
- */
 System::System(){
-	//File file;
-	//File fileget(b,c);
-	//file.create(b,c);
 	save.getText(b, c);
-	//printf("Se hizo un constructor System\n");
 }
 
 void System::menu(){
@@ -84,6 +67,7 @@ void System::insertBus(){
 	printf("Enter origin: \n");
 	std::fflush(stdin);
 	std::getline(std::cin,origin);
+	//std::getline(std::cin,origin);
 	//std::cin >> origin;
 	printf("Enter destination: \n");
 	//std::cin >> destination;
@@ -162,6 +146,7 @@ void System::bookingSeat(){
 				//std::cin >> Name;
 				std::fflush(stdin);
 				std::getline(std::cin,Name);
+				//std::getline(std::cin,Name);
 				printf("Enter credit card number:\n");
 				std::cin >> CC;
 				temp2.setName(Name);
