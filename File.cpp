@@ -95,8 +95,6 @@ void File::save(std::vector<Bus> b, std::vector<Customer> c) {
 			<< b[i].getHr_out() << ","
 			<< b[i].getPrice()
 			<< "\n"; 
-
-		printf("Valor i BUS SAVE\n");
 	} 
 	fin.close(); 
 	fout.close(); 
@@ -110,7 +108,6 @@ void File::save(std::vector<Bus> b, std::vector<Customer> c) {
 			<< c[i].getCC() << ","
 			<< c[i].getCode() 
 			<< "\n"; 
-		printf("Valor i Customer SAVE\n");
 	} 
 	fin.close();
 	fout.close();
