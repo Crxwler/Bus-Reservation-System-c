@@ -78,32 +78,23 @@ void System::menu(){
 void System::insertBus(){
 	printf("Bus Schedule\n");
 	printf("Enter code: \n");
-	fflush(stdin);
-	getline(std::cin,code);
-	//scanf(" %d",&code);
+	std::cin >> code;
 	printf("Enter number of seats: \n");
 	scanf(" %d",&seat);
 	printf("Enter origin: \n");
-	fflush(stdin);
-	getline(std::cin,origin);
-	//scanf(" %s",&origin);
+	std::fflush(stdin);
+	std::getline(std::cin,origin);
+	//std::cin >> origin;
 	printf("Enter destination: \n");
-	fflush(stdin);
-	getline(std::cin,destination);
-	//scanf(" %s",&destination);
+	//std::cin >> destination;
+	std::fflush(stdin);
+	std::getline(std::cin,destination);
 	printf("Enter in time: \n");
-	fflush(stdin);
-	getline(std::cin,hr_in);
-	//scanf(" %s",&hr_in);
+	std::cin >> hr_in;
 	printf("Enter out time: \n");
-	fflush(stdin);
-	getline(std::cin,hr_out);
-	//scanf(" %s",&hr_out);
+	std::cin >> hr_out;
 	printf("Enter price of ticket: \n");
 	scanf(" %f",&price);
-	//Bus temp(code,seat,origin,destination,hr_in,hr_out,price);
-	//Bus temp;
-	//temp.Bus(code,seat,origin,destination,hr_in,hr_out,price);
 	temp.setCode(code);
 	temp.setSeat(seat);
 	temp.setOrigin(origin);
@@ -115,18 +106,16 @@ void System::insertBus(){
 }
 void System::deleteBus(){
 	printf("Enter ID to delete schedule\n");
-	scanf("%d",&id);
+	std::cin >> id;
 	b.erase(b.begin()+id);
 }
 void System::updateBus(){
 	flag=0;
 	str="";
 	do{	
-		std::string str2;
 		printf("Which schedule want to update?\n");
 		printf("Enter code\n");
-		fflush(stdin);
-		getline(std::cin,str);
+		std::cin >> str;
 		for (int i = 0; i < b.size(); ++i){
 			if(flag) break;
 			if(b[i].getCode() == str){
@@ -145,8 +134,7 @@ void System::searchBus(){
 	str="";
 	do {
 		printf("Enter your origin\n");
-		fflush(stdin);
-		getline(std::cin,str);
+		std::cin >> str;
 		for (int i = 0; i < b.size(); ++i){
 			if(b[i].getOrigin() == str) {
 				printf("ID Code\tSeat\tOrigin\tDestination\tHr in\t Hr Out\tPrice \n");
@@ -164,20 +152,18 @@ void System::searchBus(){
 void System::bookingSeat(){
 	do{	
 		flag=0;
-		std::string str2;
 		printf("Enter code of schedule\n");
-		fflush(stdin);
-		getline(std::cin,str);
+		std::cin >> str;
 		for (int i = 0; i < b.size(); ++i){
 			if(flag) break;
 			if(b[i].getCode() == str){
 				flag=1;
 				printf("Enter full name:\n");
-				fflush(stdin);
-				getline(std::cin,Name);
+				//std::cin >> Name;
+				std::fflush(stdin);
+				std::getline(std::cin,Name);
 				printf("Enter credit card number:\n");
-				fflush(stdin);
-				getline(std::cin,CC);
+				std::cin >> CC;
 				temp2.setName(Name);
 				temp2.setCC(CC);
 				temp2.setCode(b[i].getCode());
@@ -187,7 +173,6 @@ void System::bookingSeat(){
 		}
 		if(!flag)
 			printf("Enter a valid code!\n");
-
 	} while (flag==0);
 	
 }
@@ -202,7 +187,7 @@ void System::bookingDetails(){
 }
 void System::cancelSeat(){
 	printf("Enter ID to delete Customer\n");
-	scanf("%d",&id);
+	std::cin >> id;
 	c[id].getCode();
 	c.erase(c.begin()+id);
 }
