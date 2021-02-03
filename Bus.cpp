@@ -72,6 +72,3 @@ float Bus::getPrice(){
 	return price;
 }
 
-
-
-

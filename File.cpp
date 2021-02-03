@@ -86,7 +86,7 @@ void File::save(std::vector<Bus> b, std::vector<Customer> c) {
 	std::fstream fin, fout; 
 	fin.open("Bus.csv", std::ios::in); 
 	fout.open("BusTemp.csv", std::ios::out); 
-	for (int i = 0; i < b.size(); i++) { 
+	for (int i = 0; i < b.size()-1; i++) { 
 		fout << b[i].getCode() << ","
 			<< b[i].getSeat() << ","
 			<< b[i].getOrigin() << ","
@@ -95,6 +95,8 @@ void File::save(std::vector<Bus> b, std::vector<Customer> c) {
 			<< b[i].getHr_out() << ","
 			<< b[i].getPrice()
 			<< "\n"; 
+
+		printf("Valor i BUS SAVE\n");
 	} 
 	fin.close(); 
 	fout.close(); 
@@ -103,11 +105,12 @@ void File::save(std::vector<Bus> b, std::vector<Customer> c) {
 	
 	fin.open("Customer.csv", std::ios::in);
 	fout.open("CustomerTemp.csv", std::ios::out);
-	for (int i = 0; i < c.size(); i++) {
+	for (int i = 0; i < c.size()-1; i++) {
 		fout << c[i].getName() << ","
 			<< c[i].getCC() << ","
 			<< c[i].getCode() 
 			<< "\n"; 
+		printf("Valor i Customer SAVE\n");
 	} 
 	fin.close();
 	fout.close();
